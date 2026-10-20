@@ -44,16 +44,37 @@
   .price.na{font-family:Inter,sans-serif;font-weight:500;font-size:.85rem;color:var(--muted)}
   .go{font-size:.85rem;font-weight:600;color:var(--cherry)}
   footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 16px 40px}
+  input[name=tab]{position:absolute;opacity:0;pointer-events:none}
+  .tabs{display:flex;justify-content:center;gap:8px;padding:0 16px;margin-top:-8px}
+  .tabs label{cursor:pointer;padding:10px 22px;border-radius:999px;font-weight:600;
+    border:1px solid var(--line);background:var(--card);color:var(--muted);transition:all .15s}
+  .tabs small{margin-left:6px;font-size:.75rem;opacity:.7}
+  #t-bastien:checked ~ .tabs label[for=t-bastien],
+  #t-laura:checked ~ .tabs label[for=t-laura]{background:var(--teal);border-color:var(--teal);color:#fff}
+  #t-bastien:focus-visible ~ .tabs label[for=t-bastien],
+  #t-laura:focus-visible ~ .tabs label[for=t-laura]{outline:2px solid var(--cherry);outline-offset:2px}
+  .panel{display:none}
+  #t-bastien:checked ~ main #p-bastien,
+  #t-laura:checked ~ main #p-laura{display:block}
+  .card.idea{cursor:default}
+  .card.idea:hover{transform:none;box-shadow:none}
 </style>
 </head>
 <body>
 <header>
   <h1>Liste de <span>Noël</span> 🎄</h1>
-  <p>Quelques idées si vous êtes en panne d'inspiration. Cliquez sur une carte pour aller sur la boutique.</p>
-  <div class="total">9 idées cadeaux</div>
+  <p>Quelques idées si vous êtes en panne d'inspiration. Choisissez une liste, puis cliquez sur une carte pour aller sur la boutique.</p>
 </header>
 
+<input type="radio" name="tab" id="t-bastien" checked>
+<input type="radio" name="tab" id="t-laura">
+<nav class="tabs">
+  <label for="t-bastien">Bastien <small>9</small></label>
+  <label for="t-laura">Laura <small>7</small></label>
+</nav>
+
 <main>
+<section class="panel" id="p-bastien">
   <h2>🥁 Batterie</h2>
   <div class="grid" id="drums">
     <a class="card" href="https://www.thomann.fr/shure_se215cl.htm" target="_blank" rel="noopener">
@@ -142,6 +163,76 @@
       </div>
     </a>
   </div>
+</section>
+
+<section class="panel" id="p-laura">
+  <h2>🎀 Les envies de Laura</h2>
+  <div class="grid">
+    <a class="card" href="https://www.cabaia.fr/products/vanity-honolulu" target="_blank" rel="noopener">
+      <div class="img"><img src="https://cdn.shopify.com/s/files/1/1922/9711/files/TDM_W25_VANITY_MEDIUM_HONOLULU_3667022024338_01.webp?v=1786352469&width=600" alt="Vanity Medium Honolulu" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Cabaia</div>
+        <div class="name">Vanity Medium Honolulu</div>
+        <div class="note">Vanity Cabaia, coloris doré</div>
+        <div class="foot"><span class="price">55 €</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <div class="card idea">
+      <div class="img"><span class="emoji">👝</span></div>
+      <div class="body">
+        <div class="shop">Idée</div>
+        <div class="name">Sac banane en daim</div>
+        <div class="note">Tons marron, ou un modèle Hindbag</div>
+        <div class="foot"><span class="price na">Au choix</span></div>
+      </div>
+    </div>
+    <div class="card idea">
+      <div class="img"><span class="emoji">🧣</span></div>
+      <div class="body">
+        <div class="shop">Idée</div>
+        <div class="name">Écharpe</div>
+        <div class="note">Dans les tons marron</div>
+        <div class="foot"><span class="price na">Au choix</span></div>
+      </div>
+    </div>
+    <div class="card idea">
+      <div class="img"><span class="emoji">💳</span></div>
+      <div class="body">
+        <div class="shop">Amenolia</div>
+        <div class="name">Carte cadeau Amenolia</div>
+        <div class="note">À commander sur leur site internet</div>
+        <div class="foot"><span class="price na">Au choix</span></div>
+      </div>
+    </div>
+    <a class="card" href="https://piercing-house.fr/products/piercing-helix-corvus-eclipse" target="_blank" rel="noopener">
+      <div class="img"><img src="https://cdn.shopify.com/s/files/1/0790/9864/2766/files/Piercing_helix_-_Corvus_Eclipse_1.jpg?v=1773577174&width=600" alt="Piercing hélix Corvus Éclipse" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Piercing House</div>
+        <div class="name">Piercing hélix Corvus Éclipse</div>
+        <div class="note">Boucle d'oreille pour hélix</div>
+        <div class="foot"><span class="price">20,97 €</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://piercing-house.fr/products/piercing-helix-clytia" target="_blank" rel="noopener">
+      <div class="img"><img src="https://cdn.shopify.com/s/files/1/0790/9864/2766/files/Piercing_helix_clytia_7.jpg?v=1773498099&width=600" alt="Piercing hélix Clytia" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Piercing House</div>
+        <div class="name">Piercing hélix Clytia</div>
+        <div class="note">Boucle d'oreille pour hélix</div>
+        <div class="foot"><span class="price">20,16 €</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://www.amazon.fr/dp/B01N4BN2V2?psc=1" target="_blank" rel="noopener">
+      <div class="img"><span class="emoji">🪞</span></div>
+      <div class="body">
+        <div class="shop">Amazon</div>
+        <div class="name">Miroir avec rangement à bijoux</div>
+        <div class="note">Coloris blanc</div>
+        <div class="foot"><span class="price na">Voir le prix</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+  </div>
+</section>
 </main>
 
 <footer>Prix indicatifs relevés le 20 octobre 2026 — ils peuvent varier.</footer>
