@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liste de Noël</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f7f6; --card:#ffffff; --ink:#12302c; --muted:#5b726e;
+    --teal:#0f766e; --teal-soft:#d6efec; --cherry:#b5172f; --line:#e1eae8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0c1a18; --card:#13262363; --ink:#e7f3f1; --muted:#93aca8;
+      --teal:#2dd4bf; --teal-soft:#123a35; --cherry:#f2546b; --line:#1f3a36; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.5}
+  header{padding:56px 16px 32px;text-align:center;
+    background:radial-gradient(1200px 300px at 50% -40px,var(--teal-soft),transparent)}
+  h1{font-family:Fraunces,serif;font-weight:800;font-size:clamp(2.2rem,6vw,3.6rem);margin:0;letter-spacing:-.02em}
+  h1 span{color:var(--cherry)}
+  header p{color:var(--muted);margin:10px auto 0;max-width:520px}
+  .total{display:inline-block;margin-top:18px;padding:6px 14px;border-radius:999px;
+    background:var(--teal-soft);color:var(--teal);font-weight:600;font-size:.9rem}
+  main{max-width:1040px;margin:0 auto;padding:8px 16px 64px}
+  h2{font-family:Fraunces,serif;font-size:1.35rem;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    display:flex;flex-direction:column;text-decoration:none;color:inherit;
+    transition:transform .15s ease, box-shadow .15s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 30px -12px rgba(15,118,110,.35)}
+  .img{aspect-ratio:1/1;background:#fff;display:grid;place-items:center;padding:18px}
+  .img img{max-width:100%;max-height:100%;object-fit:contain}
+  .img .emoji{font-size:4.5rem}
+  .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .shop{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+  .name{font-weight:600;font-size:1rem}
+  .note{font-size:.85rem;color:var(--muted)}
+  .foot{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:center}
+  .price{font-family:Fraunces,serif;font-weight:800;font-size:1.25rem;color:var(--teal)}
+  .price.na{font-family:Inter,sans-serif;font-weight:500;font-size:.85rem;color:var(--muted)}
+  .go{font-size:.85rem;font-weight:600;color:var(--cherry)}
+  footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 16px 40px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Liste de <span>Noël</span> 🎄</h1>
+  <p>Quelques idées si vous êtes en panne d'inspiration. Cliquez sur une carte pour aller sur la boutique.</p>
+  <div class="total">7 idées cadeaux</div>
+</header>
+
+<main>
+  <h2>🥁 Batterie</h2>
+  <div class="grid" id="drums">
+    <a class="card" href="https://www.thomann.fr/shure_se215cl.htm" target="_blank" rel="noopener">
+      <div class="img"><img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_26/262382/11455561_800.jpg" alt="Shure SE215 Pro CL" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Thomann</div>
+        <div class="name">Shure SE215 Pro CL</div>
+        <div class="note">Écouteurs intra-auriculaires, transparents</div>
+        <div class="foot"><span class="price">114 €</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://www.thomann.fr/thomann_drum_rug_oriental_blue_1.htm" target="_blank" rel="noopener">
+      <div class="img"><img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_45/457861/13918146_800.jpg" alt="Thomann Drum Rug Oriental Blue 1" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Thomann</div>
+        <div class="name">Thomann Drum Rug Oriental Blue 1</div>
+        <div class="note">Tapis de batterie 160 × 190 cm</div>
+        <div class="foot"><span class="price">98 €</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://www.drum-tec.fr/lemon-e-cymbal-pads?number=1012782" target="_blank" rel="noopener">
+      <div class="img"><img src="https://www.drum-tec.fr/media/image/64/bf/b4/1012782_Lemon-LE-18CR3_1.jpg" alt="Lemon E-Cymbal 18&quot; 3 zones" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">drum-tec</div>
+        <div class="name">Lemon E-Cymbal 18" 3 zones</div>
+        <div class="note">Cymbale électronique (version 3 zones, 18")</div>
+        <div class="foot"><span class="price">149 €</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://www.thomann.fr/roland_pdx100_10_vdrum_pad.htm" target="_blank" rel="noopener">
+      <div class="img"><img src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_28/282019/15596730_800.jpg" alt="Roland PDX-100 10&quot;" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Thomann</div>
+        <div class="name">Roland PDX-100 10"</div>
+        <div class="note">Pad V-Drum 2 zones, peau maillée</div>
+        <div class="foot"><span class="price">215 €</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+  </div>
+
+  <h2>🃏 Yu-Gi-Oh!</h2>
+  <div class="grid" id="ygo">
+    <a class="card" href="https://www.amazon.fr/dp/B0H4Z5HZRW?th=1" target="_blank" rel="noopener">
+      <div class="img"><span class="emoji">📒</span></div>
+      <div class="body">
+        <div class="shop">Amazon</div>
+        <div class="name">Classeur de collection Yu-Gi-Oh</div>
+        <div class="note">Classeur à fermeture éclair, pochettes intérieures</div>
+        <div class="foot"><span class="price na">Voir le prix</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://www.dragonshield.com/en-eu/products/clear-toploading-perfect-fit-sleeves-japanese-size" target="_blank" rel="noopener">
+      <div class="img"><img src="https://cdn.shopify.com/s/files/1/0947/5008/1411/files/AT-13051-DSJ-PF_TOPL-HPAzWBir.png?v=1773375850&amp;width=600" alt="Dragon Shield Perfect Fit Toploading — Japanese" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Dragon Shield</div>
+        <div class="name">Dragon Shield Perfect Fit Toploading — Japanese</div>
+        <div class="note">Inner sleeves transparentes, taille japonaise</div>
+        <div class="foot"><span class="price na">Voir le prix</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+    <a class="card" href="https://www.dragonshield.com/en-eu/products/justice-matte-dual-sleeves?variant=57579158274435" target="_blank" rel="noopener">
+      <div class="img"><img src="https://cdn.shopify.com/s/files/1/0947/5008/1411/files/box_sleeve_flat-8sJzWPZm.png?v=1773377215&amp;width=600" alt="Dragon Shield Matte Dual — Justice" loading="lazy" referrerpolicy="no-referrer"></div>
+      <div class="body">
+        <div class="shop">Dragon Shield</div>
+        <div class="name">Dragon Shield Matte Dual — Justice</div>
+        <div class="note">Sleeves mates, coloris Justice</div>
+        <div class="foot"><span class="price na">Voir le prix</span><span class="go">Voir →</span></div>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer>Prix indicatifs relevés le 20 octobre 2026 — ils peuvent varier.</footer>
+
+</body>
+</html>
